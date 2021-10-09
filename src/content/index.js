@@ -1,0 +1,5 @@
+export const description = {
+  "en" : "Mechanical engineer, passionate about technology. Embedded Systems Developer at BaltarTec and asphalt production manager at Construtora ANCAR. Currently, Elixir, C/C++, ReactJS, React-Native and Python are the technologies that I dedicate myself to. I love to approach content such as Machine-learning, microelectronics and IoT.",
+  "fr" : "Ingénieur en mécanique, passionné par la technologie. Développeur de systèmes embarqués chez BaltarTec et responsable de la production d'asphalte chez Construtora ANCAR. Actuellement, Elixir, C/C++, ReactJS, React-Native et Python sont les technologies auxquelles je me consacre. J'aime aborder des contenus tels que le Machine-learning, la microélectronique et l'IoT.",
+  "pt" : "Engenheiro mecânico apaixonado por tecnologia. Engenheiro de Sistemas embarcados na BaltarTec e Gerente de produção de aslfato na Construtora ANCAR. Atualmente, Elixir, C/C++, ReactJS, React-Native e Python são as tecnologias que eu me dedico. Eu adoro abrodar conteúdos como Machine-Learning, Micro eletrônica e IoT."
+}

@@ -1,0 +1,30 @@
+.bt-check-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  font-weight: 700;
+  font-size: medium;
+}
+.bt-check-container div {
+  padding: 10px;
+  color: var(--principal-bt-color);
+  background-color: var(--bt-background);
+  cursor: pointer;
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+.bt-check-left {
+  border-start-start-radius: 25%;
+  border-end-start-radius: 25%;
+}
+.bt-check-rigth {
+  border-end-end-radius: 25%;
+  border-start-end-radius: 25%;
+}
+.checked{
+  background-color: var(--bt-bg-hover) !important;
+}

@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+import Profile from './components/profile';
+import BtTheme from './components/btTheme';
+import BtCheck from './components/btCheck';
+import { description } from './content';
+
+import React, { useState} from 'react';
+
 import './App.css';
 
 function App() {
+  const [lang, setLang] = useState("en");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" >
+      <div className="header">
+        <BtCheck lang={lang} setLang={setLang} />
+        <BtTheme />
+      </div>
+      <div className="profile" ><Profile /></div>
+      <div className="description">{description[lang]}</div>
+      
     </div>
   );
 }
