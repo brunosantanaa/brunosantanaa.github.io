@@ -6,7 +6,7 @@ html, body, #root {
   height: 100%;
   background-color: var(--principal-background);
   color: var(--principal-color);
-  font-size: x-large;
+  font-size: large;
 }
 .App{
   display: flex;
