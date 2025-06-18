@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware Innovation Hub - Pitch Deck</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #2d2d2d 100%);
+            color: #e0e0e0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .slide {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px 0;
+            position: relative;
+        }
+
+        .slide-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .slide-number {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #00d4aa;
+            border: 1px solid #00d4aa;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            color: rgb(30, 30, 30);
+            background: linear-gradient(45deg, #00d4aa, #40e0d0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #00d4aa;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        }
+
+        h3 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #40e0d0;
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .card {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(0, 212, 170, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 212, 170, 0.2);
+            border-color: #00d4aa;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #23d100, #62b220);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 212, 170, 0.3);
+            color: #000;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            border: 1px solid rgba(64, 224, 208, 0.3);
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #00d4aa;
+        }
+
+        .stat-label {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .product-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .product-card {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(20, 20, 20, 0.9));
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            border: 1px solid rgba(64, 224, 208, 0.3);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-3px);
+            border-color: #00d4aa;
+        }
+
+        .product-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .timeline {
+            position: relative;
+            margin: 40px 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            border-left: 4px solid #00d4aa;
+        }
+
+        .financial-table {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 1px solid rgba(0, 212, 170, 0.3);
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .table th,
+        .table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(0, 212, 170, 0.2);
+        }
+
+        .table th {
+            background: rgba(0, 212, 170, 0.2);
+            font-weight: bold;
+            color: #00d4aa;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+            border-radius: 20px;
+            margin: 40px 0;
+            border: 1px solid rgba(0, 212, 170, 0.3);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #00d4aa, #40e0d0);
+            color: #000;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+            margin: 10px;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+        }
+
+        .risk-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .risk-item {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            border-left: 4px solid #ff4757;
+        }
+
+        .mitigation-item {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            border-left: 4px solid #2ed573;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        li::before {
+            content: "▶";
+            position: absolute;
+            left: 0;
+            color: #00d4aa;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+
+            .content-grid,
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .risk-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Slide 1: Título -->
+        <div class="slide">
+            <div class="slide-number">01</div>
+            <div class="slide-header">
+                <h1>Incubadora de Hardware com Múltiplas Marcas Independentes</h1>
+                <div class="highlight-box">
+                    <h3>🇨🇦 Estrutura Corporativa Canadense</h3>
+                    <p>Operação estratégica focada na América do Norte</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Visão Geral do Negócio -->
+        <div class="slide">
+            <div class="slide-number">02</div>
+            <h2>🎯 Visão Geral do Negócio</h2>
+            <div class="content-grid">
+                <div class="card">
+                    <h3>🏢 Modelo de Negócio</h3>
+                    <p>Incubadora de hardware com portfólio diversificado de produtos eletrônicos especializados, cada
+                        um com marca e estratégia independente.</p>
+                </div>
+                <div class="card">
+                    <h3>🌍 Mercado-Alvo</h3>
+                    <p>América do Norte (EUA e Canadá) com foco em nichos especializados de alta margem.</p>
+                </div>
+                <div class="card">
+                    <h3>🛡️ Vantagem Competitiva</h3>
+                    <p>Estrutura fiscal otimizada no Canadá, branding independente e proteção patrimonial robusta.</p>
+                </div>
+                <div class="card">
+                    <h3>💡 Estratégia</h3>
+                    <p>Multi-divisional com marcas individuais para evitar contaminação de reputação e maximizar valor
+                        de cada produto.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Mercado e Oportunidade -->
+        <div class="slide">
+            <div class="slide-number">03</div>
+            <h2>📊 Mercado e Oportunidade</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">$15.8B</div>
+                    <div class="stat-label">Mercado de Impressão 3D (2024)</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">$2.1B</div>
+                    <div class="stat-label">Mercado de Simuladores</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">$1.8B</div>
+                    <div class="stat-label">Teclados Mecânicos Premium</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">25%</div>
+                    <div class="stat-label">Crescimento Anual Médio</div>
+                </div>
+            </div>
+            <div class="highlight-box">
+                <h3>🚀 Oportunidade de Mercado</h3>
+                <p>Mercados de nicho em crescimento acelerado com demanda por produtos especializados e de alta
+                    qualidade. Consumidores dispostos a pagar premium por inovação.</p>
+            </div>
+        </div>
+
+        <!-- Slide 4: Portfólio de Produtos -->
+        <div class="slide">
+            <div class="slide-number">04</div>
+            <h2>🛠️ Exemplo de Portfólio de Produtos</h2>
+            <div class="product-showcase">
+                <div class="product-card">
+                    <div class="product-icon">🖥️</div>
+                    <h3>Smart Display 3D</h3>
+                    <p>Display touchscreen com Wi-Fi para impressoras 3D. Controle remoto, monitoramento e interface
+                        intuitiva.</p>
+                    <div style="margin-top: 15px; color: #00d4aa; font-weight: bold;">Mercado: $500M+</div>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">🏎️</div>
+                    <h3>Racing Display Pro</h3>
+                    <p>Display especializado para simuladores de corrida com métricas em tempo real e customização
+                        avançada.</p>
+                    <div style="margin-top: 15px; color: #00d4aa; font-weight: bold;">Mercado: $300M+</div>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">⌨️</div>
+                    <h3>Ortho Keyboard</h3>
+                    <p>Teclado mecânico ortolinear Bluetooth premium para programadores e entusiastas.</p>
+                    <div style="margin-top: 15px; color: #00d4aa; font-weight: bold;">Mercado: $200M+</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Modelo de Receita -->
+        <div class="slide">
+            <div class="slide-number">05</div>
+            <h2>💰 Modelo de Receita</h2>
+            <div class="content-grid">
+                <div class="card">
+                    <h3>💳 Vendas Diretas</h3>
+                    <ul>
+                        <li>E-commerce próprio por marca</li>
+                        <li>Margens de 60-70%</li>
+                        <li>Controle total da experiência</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>📈 Upsells & Cross-sells</h3>
+                    <ul>
+                        <li>Acessórios complementares</li>
+                        <li>Suporte premium</li>
+                        <li>Upgrades de software</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>🔄 Receita Recorrente</h3>
+                    <ul>
+                        <li>Assinaturas de software</li>
+                        <li>Suporte técnico</li>
+                        <li>Atualizações premium</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>🌍 Expansão Internacional</h3>
+                    <ul>
+                        <li>Distribuição para Europa</li>
+                        <li>Parcerias estratégicas</li>
+                        <li>Licenciamento de IP</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Estrutura Corporativa -->
+        <div class="slide">
+            <div class="slide-number">06</div>
+            <h2>🏛️ Estrutura Corporativa</h2>
+            <div class="content-grid">
+                <div class="card">
+                    <h3>🇨🇦 Incorporação Federal</h3>
+                    <ul>
+                        <li>Custo: ~CAD $200</li>
+                        <li>Tempo: 1 dia útil</li>
+                        <li>Operação em todo Canadá</li>
+                        <li>Facilita registro provincial</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>🛡️ Proteção Patrimonial</h3>
+                    <ul>
+                        <li>Responsabilidade limitada</li>
+                        <li>Ativos pessoais protegidos</li>
+                        <li>Estrutura de governança</li>
+                        <li>Compliance robusto</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="highlight-box">
+                <h3>💼 CNPC - Vantagem Fiscal</h3>
+                <p><strong>Apenas 9% de imposto</strong> sobre os primeiros CAD $500,000 anuais<br>
+                    Economia fiscal significativa comparada a outras jurisdições</p>
+            </div>
+        </div>
+
+        <!-- Slide 7: Estratégia de Branding -->
+        <div class="slide">
+            <div class="slide-number">07</div>
+            <h2>🎨 Estratégia de Branding</h2>
+            <div class="content-grid">
+                <div class="card">
+                    <h3>🏷️ Marcas Independentes</h3>
+                    <p>Cada produto terá marca própria, evitando contaminação de reputação e permitindo posicionamento
+                        específico por nicho.</p>
+                </div>
+                <div class="card">
+                    <h3>🌐 Presença Digital</h3>
+                    <p>Landing pages dedicadas, e-commerce próprio, redes sociais específicas (Instagram, TikTok) por
+                        produto.</p>
+                </div>
+                <div class="card">
+                    <h3>📢 Marketing Segmentado</h3>
+                    <p>Campanhas pagas dirigidas, SEO orientado por nicho, influencer marketing especializado.</p>
+                </div>
+                <div class="card">
+                    <h3>🏢 Holding Operacional</h3>
+                    <p>Corporação mãe cuida de finanças, IP, contabilidade e tributação ("corporate umbrella").</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Projeções Financeiras -->
+        <div class="slide">
+            <div class="slide-number">08</div>
+            <h2>📈 Projeções Financeiras</h2>
+            <div class="financial-table">
+                <h3>Projeção 3 Anos (CAD)</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Período</th>
+                            <th>Ano 1</th>
+                            <th>Ano 2</th>
+                            <th>Ano 3</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Receita Bruta</td>
+                            <td>$150,000</td>
+                            <td>$450,000</td>
+                            <td>$850,000</td>
+                        </tr>
+                        <tr>
+                            <td>Custos Operacionais</td>
+                            <td>$90,000</td>
+                            <td>$220,000</td>
+                            <td>$380,000</td>
+                        </tr>
+                        <tr>
+                            <td>EBITDA</td>
+                            <td>$60,000</td>
+                            <td>$230,000</td>
+                            <td>$470,000</td>
+                        </tr>
+                        <tr>
+                            <td>Impostos (9%)</td>
+                            <td>$5,400</td>
+                            <td>$20,700</td>
+                            <td>$42,300</td>
+                        </tr>
+                        <tr style="border-top: 2px solid #ffd700;">
+                            <td><strong>Lucro Líquido</strong></td>
+                            <td><strong>$54,600</strong></td>
+                            <td><strong>$209,300</strong></td>
+                            <td><strong>$427,700</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">65%</div>
+                    <div class="stat-label">Margem Bruta Média</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50%</div>
+                    <div class="stat-label">Margem EBITDA (Ano 3)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Investimento Inicial -->
+        <div class="slide">
+            <div class="slide-number">09</div>
+            <h2>💸 Investimento Inicial</h2>
+            <div class="content-grid">
+                <div class="card">
+                    <h3>🏗️ Setup Corporativo</h3>
+                    <ul>
+                        <li>Incorporação: CAD $800</li>
+                        <li>Registro tributário: CAD $500</li>
+                        <li>Advogado/Contador: CAD $2,000</li>
+                        <li>Seguros: CAD $1,200</li>
+                    </ul>
+                    <div style="text-align: center; margin-top: 15px; font-size: 1.2em; color: #00d4aa;">
+                        <strong>Total: CAD $4,500</strong>
+                    </div>
+                </div>
+                <div class="card" style="border: 2px solid #2ed573; background: rgba(46, 213, 115, 0.1);">
+                    <h3>🛠️ Desenvolvimento</h3>
+                    <ul>
+                        <li style="text-decoration: line-through; opacity: 0.6;">Protótipos: CAD $15,000</li>
+                        <li style="text-decoration: line-through; opacity: 0.6;">Certificações: CAD $8,000 (Inicialmente
+                            buscar produtos isento de Certificações)</li>
+                        <li style="text-decoration: line-through; opacity: 0.6;">Ferramentas/Software: CAD $3,000 (Open
+                            source)</li>
+                        <li style="text-decoration: line-through; opacity: 0.6;">Testes: CAD $4,000</li>
+                    </ul>
+                    <div style="text-align: center; margin-top: 15px; font-size: 1.2em; color: #2ed573;">
+                        <strong>✅ PROTÓTIPOS PELOS SÓCIOS</strong>
+                    </div>
+                </div>
+                <div class="card" style="border: 2px solid #2ed573; background: rgba(46, 213, 115, 0.1);">
+                    <h3>📢 Marketing & Branding</h3>
+                    <ul>
+                        <li style="text-decoration: line-through; opacity: 0.6;">Design de marcas: CAD $5,000</li>
+                        <li style="text-decoration: line-through; opacity: 0.6;">Websites: CAD $8,000</li>
+                        <li style="text-decoration: line-through; opacity: 0.6;">Marketing inicial: CAD $10,000</li>
+                        <li style="text-decoration: line-through; opacity: 0.6;">Conteúdo: CAD $2,000</li>
+                    </ul>
+                    <div style="text-align: center; margin-top: 15px; font-size: 1.2em; color: #2ed573;">
+                        <strong>✅ EXECUTADO PELOS SÓCIOS</strong>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>💰 Capital de Giro</h3>
+                    <ul>
+                        <li style="text-decoration: line-through; opacity: 0.6;">Estoque inicial: CAD $20,000 (On
+                            demand)</li>
+                        <li>Operacional: CAD $10,000</li>
+                        <li>Contingência: CAD $5,000</li>
+                    </ul>
+                    <div style="text-align: center; margin-top: 15px; font-size: 1.2em; color: #00d4aa;">
+                        <strong>Total: CAD $15,000</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="highlight-box">
+                <h3>🎯 Investimento Total Necessário</h3>
+                <h1 style="font-size: 2.5em; margin: 0; color: #000;">CAD $29,500</h1>
+                <p style="color: #000;">Para lançamento completo dos 3 produtos iniciais</p>
+                <div
+                    style="margin-top: 20px; padding: 15px; background: rgba(46, 213, 115, 0.3); border-radius: 10px; color: #000;">
+                    <strong>💡 Economia: CAD $75,000</strong><br>
+                    Desenvolvimento e marketing interno pelos sócios
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Riscos e Mitigações -->
+        <div class="slide">
+            <div class="slide-number">10</div>
+            <h2>⚠️ Riscos e Mitigações</h2>
+            <div class="risk-grid">
+                <div>
+                    <h3 style="color: #ff4757;">🚨 Principais Riscos</h3>
+                    <div class="risk-item">
+                        <h4>Competição</h4>
+                        <p>Entrada de grandes players no mercado</p>
+                    </div>
+                    <div class="risk-item">
+                        <h4>Regulamentação</h4>
+                        <p>Mudanças em certificações FCC/canadenses</p>
+                    </div>
+                    <div class="risk-item">
+                        <h4>Supply Chain</h4>
+                        <p>Dependência de fornecedores asiáticos</p>
+                    </div>
+                    <div class="risk-item">
+                        <h4>Recalls</h4>
+                        <p>Problemas de qualidade em produtos</p>
+                    </div>
+                </div>
+                <div>
+                    <h3 style="color: #2ed573;">✅ Estratégias de Mitigação</h3>
+                    <div class="mitigation-item">
+                        <h4>Diferenciação</h4>
+                        <p>Foco em nichos especializados com alta barreira de entrada</p>
+                    </div>
+                    <div class="mitigation-item">
+                        <h4>Compliance Proativo</h4>
+                        <p>Monitoramento contínuo e antecipação de mudanças</p>
+                    </div>
+                    <div class="mitigation-item">
+                        <h4>Diversificação</h4>
+                        <p>Múltiplos fornecedores e estoque estratégico</p>
+                    </div>
+                    <div class="mitigation-item">
+                        <h4>Seguro & QA</h4>
+                        <p>Seguro de responsabilidade e controle de qualidade rigoroso</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 11: Cronograma -->
+        <div class="slide">
+            <div class="slide-number">11</div>
+            <h2>📅 Cronograma de Execução</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div>
+                        <h3>Meses 1-2: Setup Corporativo</h3>
+                        <p>Incorporação, registros tributários, conta bancária, seguros</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div>
+                        <h3>Meses 3-4: Desenvolvimento</h3>
+                        <p>Protótipos finais, testes, certificações, setup de produção</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div>
+                        <h3>Meses 5-6: Branding & Marketing</h3>
+                        <p>Criação de marcas, websites, conteúdo, estratégia de lançamento</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div>
+                        <h3>Mês 7: Pré-Lançamento</h3>
+                        <p>Campanhas teaser, pré-vendas, setup logístico</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div>
+                        <h3>Mês 8: Lançamento</h3>
+                        <p>Lançamento oficial do primeiro produto (Smart Display 3D)</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div>
+                        <h3>Meses 9-12: Expansão</h3>
+                        <p>Lançamento dos demais produtos, otimização, scaling</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 12: Equipe e Funções -->
+        <div class="slide">
+            <div class="slide-number">12</div>
+            <h2>👥 Equipe e Necessidades</h2>
+            <div class="content-grid">
+                <div class="card">
+                    <h3>🎯 Fundador/CEO</h3>
+                    <ul>
+                        <li>Visão estratégica</li>
+                        <li>Desenvolvimento de produto</li>
+                        <li>Operações gerais</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>💼 Sócio Estratégico</h3>
+                    <ul>
+                        <li>Capital de investimento</li>
+                        <li>Expertise em scaling</li>
+                        <li>Rede de contatos</li>
+                        <li>Experiência em hardware</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>⚙️ Equipe Técnica</h3>
+                    <ul>
+                        <li>Engenheiro de Hardware</li>
+                        <li>Desenvolvedor de Software</li>
+                        <li>Designer de Produto</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>📊 Operações</h3>
+                    <ul>
+                        <li>Contador/CFO</li>
+                        <li>Especialista em Marketing</li>
+                        <li>Gerente de Supply Chain</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 13: Proposta ao Sócio -->
+        <div class="slide">
+            <div class="slide-number">13</div>
+            <h2>🤝 Proposta de Parceria</h2>
+            <div class="content-grid">
+                <div class="card">
+                    <h3>💰 Investimento</h3>
+                    <ul>
+                        <li>CAD $55,000 para 40% da empresa</li>
+                        <li>Valor da empresa: CAD $137,500</li>
+                        <li>ROI projetado: 600%+ em 3 anos</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>🎯 O que Oferecemos</h3>
+                    <ul>
+                        <li>Estrutura fiscal otimizada (9% imposto)</li>
+                        <li>Proteção patrimonial robusta</li>
+                        <li>Mercados em crescimento acelerado</li>
+                        <li>Produtos com alta margem</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>🤝 O que Buscamos</h3>
+                    <ul>
+                        <li>Capital para scaling</li>
+                        <li>Experiência em hardware/tech</li>
+                        <li>Network e parcerias estratégicas</li>
+                        <li>Mentalidade de crescimento</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>📈 Divisão de Ações</h3>
+                    <ul>
+                        <li>Socios Fundadores: 90%</li>
+                        <li>Pool de opções: 10% (futuro)</li>
+                        <li>Múltiplas classes de ações</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="cta-section">
+                <h3>🚀 Próximos Passos</h3>
+                <p>Vamos construir o futuro do hardware tech juntos!</p>
+            </div>
+        </div>
+
+        <!-- Slide 14: Conclusão -->
+        <div class="slide">
+            <div class="slide-number">14</div>
+            <div class="slide-header">
+                <h2>🎯 Conclusão</h2>
+                <div class="highlight-box">
+                    <h3>Hardware Innovation Hub</h3>
+                    <p style="color: #000; font-size: 1.2em; margin: 20px 0;">
+                        Uma oportunidade única de entrar em mercados de nicho em crescimento acelerado,
+                        com estrutura fiscal otimizada e proteção patrimonial robusta.
+                    </p>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 30px;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 2em; font-weight: bold; color: #000;">CAD $29K</div>
+                            <div style="color: #000;">Investimento</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 2em; font-weight: bold; color: #000;">600%+</div>
+                            <div style="color: #000;">ROI Projetado</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 2em; font-weight: bold; color: #000;">9%</div>
+                            <div style="color: #000;">Taxa de Imposto</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 50px;">
+                    <h3 style="color: #00d4aa;">Obrigado pela atenção!</h3>
+                    <p style="font-size: 1.2em; opacity: 0.9;">Vamos inovar juntos no setor de hardware tech</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
